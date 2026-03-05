@@ -15,7 +15,8 @@ const poems = {
 }
 
 const wall = document.getElementById('poem-wall');
-const rowCount = 18; // row number
+const isMobile = window.innerWidth < 768;
+const rowCount = isMobile ? 28 : 18; // row number
 const poemValues = Object.values(poems);
 
 for (let i = 0; i < rowCount; i++) {

@@ -5,12 +5,13 @@ body{
     justify-content: center; /*Horizontal*/
     align-items: center;     /*Vertical*/
     min-height: 100vh;
+    min-height: 100dvh;
     overflow: hidden; /* Prevents scrollbars */
     color: #302317;
 }
 
 .splash {
-    position: absolute; /* Lifts it above the poem rows */
+    position: fixed; /* Lifts it above the poem rows */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Perfectly offsets its own width/height */
@@ -18,7 +19,7 @@ body{
 }
 
 .splash img {
-    width: 512px;
+    width: min(512px, 80vw);
     height: auto;
     animation: splashAnimation 8s infinite;
 }
@@ -38,13 +39,14 @@ body{
     flex-direction: column;
     justify-content: space-around;
     height: 100vh;
+    height: 100dvh;
     width: 100vw;
 }
 
 .row {
     white-space: nowrap;
     display: flex;
-    font-size: 2rem;
+    font-size: clamp(1rem, 3vw, 2rem);
     font-style: italic;
 }
 
