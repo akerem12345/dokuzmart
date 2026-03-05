@@ -1,0 +1,59 @@
+body{
+    background-color: #b4b4b4;
+    margin: 0;
+    display: flex;
+    justify-content: center; /*Horizontal*/
+    align-items: center;     /*Vertical*/
+    min-height: 100vh;
+    overflow: hidden; /* Prevents scrollbars */
+    color: #302317;
+}
+
+.splash {
+    position: absolute; /* Lifts it above the poem rows */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Perfectly offsets its own width/height */
+    z-index: 10; /* Ensures it stays on top of the poems */
+}
+
+.splash img {
+    width: 512px;
+    height: auto;
+    animation: splashAnimation 8s infinite;
+}
+
+/* ===== Animations ===== */
+
+@keyframes splashAnimation {
+    0%, 50%, 100% { transform: scale(1); }
+    25%, 75% { transform: scale(1.1); }
+}
+
+
+/* ===== Waiting Approval ===== */
+
+.poem-wall {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
+    width: 100vw;
+}
+
+.row {
+    white-space: nowrap;
+    display: flex;
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.track {
+    display: flex;
+    animation: slideLeft linear infinite;
+}
+
+@keyframes slideLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } /* Slide half the width (the cloned set) */
+}
