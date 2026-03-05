@@ -1,9 +1,6 @@
 body{
     background-color: #b4b4b4;
     margin: 0;
-    display: flex;
-    justify-content: center; /*Horizontal*/
-    align-items: center;     /*Vertical*/
     min-height: 100vh;
     min-height: 100dvh;
     overflow: hidden; /* Prevents scrollbars */
@@ -37,16 +34,18 @@ body{
 .poem-wall {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     height: 100vh;
     height: 100dvh;
     width: 100vw;
+    overflow: hidden;
 }
 
 .row {
     white-space: nowrap;
     display: flex;
-    font-size: clamp(1rem, 3vw, 2rem);
+    flex: 1;
+    align-items: center;
+    font-size: clamp(0.75rem, 2.5vw, 2rem);
     font-style: italic;
 }
 
