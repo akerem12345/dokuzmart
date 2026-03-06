@@ -42,3 +42,22 @@ for (let i = 0; i < rowCount; i++) {
     row.appendChild(track);
     wall.appendChild(row);
 }
+
+/*   MOBİL   */
+
+const splash = document.querySelector('.splash');
+const splashHover = document.querySelector('.splash-hover');
+
+// Mobil: basılı tut
+splash.addEventListener('touchstart', (e) => {
+    e.preventDefault(); // Sayfanın scroll/zoom yapmasını engelle
+    splashHover.style.opacity = '1';
+});
+
+splash.addEventListener('touchend', () => {
+    splashHover.style.opacity = '0';
+});
+
+splash.addEventListener('touchcancel', () => {
+    splashHover.style.opacity = '0';
+});
